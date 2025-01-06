@@ -104,22 +104,22 @@ class _DiamondNodeSlisderState extends State<DiamondNodeSlisder> {
               alignment: FractionalOffset(value, 0),
               child: Container(
                 width: 40,
-                height: 15,
+                height: 20,
                 decoration: BoxDecoration(
                   color: widget.activeTrackColor,
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.0),
                   ),
                 ),
-                child: Text(
+                child: Center(child: Text(
                   (int.parse((widget.maxValue! * value)
                       .toStringAsFixed(0)) <=
                       widget.minValue!)
                       ? '${widget.minValue}${widget.textUnitStr}'
                       : '${(widget.maxValue! * value).toStringAsFixed(0)}${widget.textUnitStr}',
-                  style: TextStyle(fontSize: 13, color: Colors.white),
+                  style: TextStyle(fontSize: 13, color: Colors.white, height: 1.0),
                   textAlign: TextAlign.center,
-                ),
+                )),
               ),
             )
                 : Container(),
